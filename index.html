@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Samir Dahal – Developer</title>
+<meta name="description" content="Portfolio of Samir Dahal, web and Python developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF2F0; --ink:#14231F; --muted:#51635D; --line:#C5D1CC; --accent:#0F6B5C; --accent-ink:#fff;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F1A17;--ink:#E6EFEB;--muted:#93A8A1;--line:#26362F;--accent:#5FD1B8;--accent-ink:#0F1A17}
+}
+:root[data-theme="dark"]{--bg:#0F1A17;--ink:#E6EFEB;--muted:#93A8A1;--line:#26362F;--accent:#5FD1B8;--accent-ink:#0F1A17}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Newsreader,Georgia,serif;font-size:19px;line-height:1.6}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:28px 0;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:500;font-size:16px}
+header.top nav{display:flex;gap:22px;flex-wrap:wrap}
+header.top a{text-decoration:none}
+header.top a:hover{text-decoration:underline;text-underline-offset:4px}
+.hero{padding:72px 0 64px;border-bottom:1px solid var(--line)}
+.hero h1{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(44px,9vw,92px);line-height:.98;letter-spacing:-.03em;margin:0 0 28px}
+.hero p{max-width:34em;font-size:clamp(20px,2.6vw,24px);color:var(--muted);margin:0 0 32px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:17px;padding:14px 24px;border-radius:999px;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+section h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:30px;letter-spacing:-.02em;margin:0 0 6px}
+section .lede{color:var(--muted);margin:0 0 28px;max-width:36em}
+.row{display:grid;grid-template-columns:1fr auto;gap:6px 24px;padding:20px 0;border-top:1px solid var(--line);text-decoration:none}
+.row:hover h3{color:var(--accent);text-decoration:underline;text-underline-offset:5px}
+.row h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:22px;margin:0}
+.row p{grid-column:1;margin:0;color:var(--muted);max-width:38em}
+.row .meta{grid-column:2;grid-row:1;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:15px;color:var(--muted);white-space:nowrap}
+.about{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:start}
+.photo{aspect-ratio:1;border-radius:50%;background:var(--line);display:grid;place-items:center;color:var(--muted);font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:14px;text-align:center;padding:16px}
+.about p{margin:0 0 16px}
+.contact h2{font-size:clamp(32px,6vw,54px);letter-spacing:-.03em}
+.contact .links{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:500}
+footer{padding:32px 0 48px;color:var(--muted);font-size:16px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer button{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 16px;font:inherit;font-size:15px;cursor:pointer}
+@media (max-width:640px){
+  body{font-size:18px}
+  .about{grid-template-columns:1fr}
+  .photo{width:140px}
+  .row{grid-template-columns:1fr}
+  .row .meta{grid-column:1;grid-row:auto}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <strong>Samir Dahal</strong>
+    <nav aria-label="Main"><a href="#dev">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Samir Dahal builds web apps and thinks in algorithms.</h1>
+      <p>I'm a developer working in PHP and Python. I've built an e-commerce site, a hotel management system, and a chess trainer with AI opponents. Edit this line to say what you're looking for next.</p>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+
+    <section id="dev">
+      <h2>Projects</h2>
+      <p class="lede">Three projects, each with the code on GitHub.</p>
+      <a class="row" href="https://github.com/seallus/chess-trainer-in-python-">
+        <h3>Chess trainer</h3><span class="meta">Python</span>
+        <p>An offline chess trainer where you play against bots. The opponents use a genetic algorithm and alpha-beta search.</p>
+      </a>
+      <a class="row" href="https://github.com/seallus/projectdone">
+        <h3>Project Done: e-commerce site</h3><span class="meta">PHP</span>
+        <p>An online store. Add one line on what it sells and which features you built, such as cart, checkout or an admin panel.</p>
+      </a>
+      <a class="row" href="https://github.com/seallus/hotel-management-system-">
+        <h3>Hotel management system</h3><span class="meta">PHP · CSS · JavaScript</span>
+        <p>A web app for managing a hotel. Add what it handles, for example bookings, rooms or guests.</p>
+      </a>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="about" style="margin-top:24px">
+        <img class="photo" src="https://avatars.githubusercontent.com/u/161986703?v=4" alt="Samir Dahal" style="object-fit:cover;padding:0">
+        <div>
+          <p>I'm Samir, a developer based in Nepal. Write two or three sentences here on how you got into programming and what you enjoy building.</p>
+          <p>Add the tools you use, such as PHP, Python, JavaScript and MySQL, and the kind of work you want more of.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" style="border-bottom:0">
+      <h2>Let's work together</h2>
+      <p class="lede">Tell me what you're building and I'll get back to you.</p>
+      <a class="btn" href="mailto:dahalsamir12345@gmail.com">Email me</a>
+      <div class="links">
+        <a href="https://github.com/seallus">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Resume (PDF)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="yr">2026</span> Samir Dahal</span>
+    <button id="theme" type="button">Switch theme</button>
+  </footer>
+</div>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+var root = document.documentElement;
+document.getElementById('theme').addEventListener('click', function(){
+  var dark = root.getAttribute('data-theme') === 'dark' ||
+    (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  root.setAttribute('data-theme', dark ? 'light' : 'dark');
+});
+</script>
+</body>
+</html>
