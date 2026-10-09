@@ -4,125 +4,287 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Samir Dahal – Developer</title>
-<meta name="description" content="Portfolio of Samir Dahal, web and Python developer.">
+<meta name="description" content="Portfolio of Samir Dahal: web apps in PHP and JavaScript, and a chess AI in Python.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#EEF2F0; --ink:#14231F; --muted:#51635D; --line:#C5D1CC; --accent:#0F6B5C; --accent-ink:#fff;
-  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#F2F5FA; --panel:#FFFFFF; --ink:#0E1726; --muted:#4F5D75; --line:#D3DBE8;
+  --sqL:#E4EAF5; --sqD:#8294B8; --accent:#E8A400; --accent-ink:#0E1726; --link:#1C4FD8;
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--bg:#0F1A17;--ink:#E6EFEB;--muted:#93A8A1;--line:#26362F;--accent:#5FD1B8;--accent-ink:#0F1A17}
+  :root:not([data-theme="light"]){--bg:#0B1220;--panel:#121C30;--ink:#E8EEF8;--muted:#9AA9C4;--line:#24324D;--sqL:#B8C4DE;--sqD:#566A93;--accent:#F2B93B;--link:#8FB0FF}
 }
-:root[data-theme="dark"]{--bg:#0F1A17;--ink:#E6EFEB;--muted:#93A8A1;--line:#26362F;--accent:#5FD1B8;--accent-ink:#0F1A17}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
+:root[data-theme="dark"]{--bg:#0B1220;--panel:#121C30;--ink:#E8EEF8;--muted:#9AA9C4;--line:#24324D;--sqL:#B8C4DE;--sqD:#566A93;--accent:#F2B93B;--link:#8FB0FF}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Newsreader,Georgia,serif;font-size:19px;line-height:1.6}
-a{color:inherit}
-a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.wrap{max-width:880px;margin:0 auto;padding:0 24px}
-header.top{display:flex;justify-content:space-between;align-items:center;padding:28px 0;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:500;font-size:16px}
-header.top nav{display:flex;gap:22px;flex-wrap:wrap}
-header.top a{text-decoration:none}
-header.top a:hover{text-decoration:underline;text-underline-offset:4px}
-.hero{padding:72px 0 64px;border-bottom:1px solid var(--line)}
-.hero h1{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(44px,9vw,92px);line-height:.98;letter-spacing:-.03em;margin:0 0 28px}
-.hero p{max-width:34em;font-size:clamp(20px,2.6vw,24px);color:var(--muted);margin:0 0 32px}
-.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:17px;padding:14px 24px;border-radius:999px;text-decoration:none}
-.btn:hover{filter:brightness(1.08)}
-section{padding:56px 0;border-bottom:1px solid var(--line)}
-section h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:30px;letter-spacing:-.02em;margin:0 0 6px}
-section .lede{color:var(--muted);margin:0 0 28px;max-width:36em}
-.row{display:grid;grid-template-columns:1fr auto;gap:6px 24px;padding:20px 0;border-top:1px solid var(--line);text-decoration:none}
-.row:hover h3{color:var(--accent);text-decoration:underline;text-underline-offset:5px}
-.row h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;font-size:22px;margin:0}
-.row p{grid-column:1;margin:0;color:var(--muted);max-width:38em}
-.row .meta{grid-column:2;grid-row:1;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:15px;color:var(--muted);white-space:nowrap}
-.about{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:start}
-.photo{aspect-ratio:1;border-radius:50%;background:var(--line);display:grid;place-items:center;color:var(--muted);font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:14px;text-align:center;padding:16px}
-.about p{margin:0 0 16px}
-.contact h2{font-size:clamp(32px,6vw,54px);letter-spacing:-.03em}
-.contact .links{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:500}
-footer{padding:32px 0 48px;color:var(--muted);font-size:16px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer button{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 16px;font:inherit;font-size:15px;cursor:pointer}
-@media (max-width:640px){
-  body{font-size:18px}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Instrument Sans',system-ui,sans-serif;font-size:18px;line-height:1.6}
+h1,h2,h3{font-family:'Familjen Grotesk',system-ui,sans-serif;margin:0;line-height:1.05;letter-spacing:-.02em}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* header */
+header.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:'Familjen Grotesk',sans-serif;font-weight:700;font-size:20px;text-decoration:none;color:var(--ink)}
+nav{display:flex;align-items:center;gap:6px}
+nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:999px;font-weight:500;font-size:16px}
+nav a:hover{color:var(--ink)}
+nav a[aria-current="true"]{background:var(--ink);color:var(--bg)}
+.icon-btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:18px;margin-left:6px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:64px 0 72px}
+.hero h1{font-size:clamp(42px,6.4vw,76px);font-weight:700;margin-bottom:22px}
+.hero p{color:var(--muted);font-size:20px;max-width:30em;margin:0 0 30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;font-family:'Familjen Grotesk',sans-serif;font-weight:700;font-size:17px;padding:13px 24px;border-radius:999px;border:2px solid var(--ink);text-decoration:none;cursor:pointer;background:transparent;color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px)}
+.stage{justify-self:end;width:100%;max-width:440px}
+.board{display:grid;grid-template-columns:repeat(8,1fr);aspect-ratio:1;border-radius:14px;overflow:hidden;border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink)}
+.sq{border:0;padding:0;margin:0;position:relative;display:grid;place-items:center;background:var(--sqL);cursor:default;font-size:clamp(22px,5.5vw,38px);line-height:1;color:#0E1726;font-family:inherit}
+.sq.d{background:var(--sqD)}
+.sq.move{cursor:pointer}
+.sq.move::after{content:"";width:34%;height:34%;border-radius:50%;background:var(--accent);border:2px solid #0E1726}
+.sq.move:hover::after{transform:scale(1.25)}
+.sq.visited::before{content:"";position:absolute;width:16%;height:16%;border-radius:50%;background:#0E1726;opacity:.3}
+.sq.knight::before{display:none}
+.sq.knight .k{display:block;transition:transform .2s}
+.hud{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px;font-size:16px;color:var(--muted)}
+.hud strong{color:var(--ink)}
+.hud button{font:inherit;font-size:15px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:999px;padding:6px 16px;cursor:pointer}
+.hint{font-size:15px;color:var(--muted);margin:10px 0 0}
+.win{color:var(--ink);font-weight:500}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(32px,4.6vw,48px);margin-bottom:10px}
+.lede{color:var(--muted);margin:0 0 30px;max-width:36em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{font:inherit;font-size:15px;font-weight:500;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:999px;padding:7px 16px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.proj{border:1px solid var(--line);background:var(--panel);border-radius:16px;margin-bottom:14px}
+.proj[hidden]{display:none}
+.proj > button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;cursor:pointer;border-radius:16px}
+.proj > button:focus-visible{outline:3px solid var(--accent)}
+.proj h3{font-size:26px}
+.proj .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.tag{font-size:14px;border:1px solid var(--line);border-radius:999px;padding:2px 12px;color:var(--muted)}
+.plus{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:22px;transition:transform .2s}
+.proj.open .plus{transform:rotate(45deg)}
+.body{display:none;padding:0 24px 24px;max-width:46em}
+.proj.open .body{display:block}
+.body p{margin:0 0 14px;color:var(--muted)}
+.skills{display:flex;gap:10px;flex-wrap:wrap}
+.skills span{font-family:'Familjen Grotesk',sans-serif;font-weight:700;font-size:20px;padding:10px 20px;border-radius:12px;background:var(--panel);border:1px solid var(--line)}
+.about{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:start}
+.about img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:20px;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--accent)}
+.about p{margin:0 0 16px;max-width:34em}
+.contact h2{font-size:clamp(36px,7vw,72px)}
+.mail{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:26px 0 20px}
+.mail code{font-family:'Familjen Grotesk',sans-serif;font-size:20px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 18px;word-break:break-all}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:15px}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-top:40px}
+  .stage{justify-self:center}
   .about{grid-template-columns:1fr}
-  .photo{width:140px}
-  .row{grid-template-columns:1fr}
-  .row .meta{grid-column:1;grid-row:auto}
+  .about img{max-width:180px}
+  nav a{padding:8px 9px;font-size:15px}
 }
+@media (max-width:520px){ .brand{display:none} nav{width:100%;justify-content:space-between} }
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.btn:hover{transform:none}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <strong>Samir Dahal</strong>
-    <nav aria-label="Main"><a href="#dev">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-  </header>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top">Samir Dahal</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme">◐</button>
+    </nav>
+  </div>
+</header>
 
-  <main>
+<main id="top">
+  <div class="wrap">
     <div class="hero">
-      <h1>Samir Dahal builds web apps and thinks in algorithms.</h1>
-      <p>I'm a developer working in PHP and Python. I've built an e-commerce site, a hotel management system, and a chess trainer with AI opponents. Edit this line to say what you're looking for next.</p>
-      <a class="btn" href="#contact">Get in touch</a>
-    </div>
-
-    <section id="dev">
-      <h2>Projects</h2>
-      <p class="lede">Three projects, each with the code on GitHub.</p>
-      <a class="row" href="https://github.com/seallus/chess-trainer-in-python-">
-        <h3>Chess trainer</h3><span class="meta">Python</span>
-        <p>An offline chess trainer where you play against bots. The opponents use a genetic algorithm and alpha-beta search.</p>
-      </a>
-      <a class="row" href="https://github.com/seallus/projectdone">
-        <h3>Project Done: e-commerce site</h3><span class="meta">PHP</span>
-        <p>An online store. Add one line on what it sells and which features you built, such as cart, checkout or an admin panel.</p>
-      </a>
-      <a class="row" href="https://github.com/seallus/hotel-management-system-">
-        <h3>Hotel management system</h3><span class="meta">PHP · CSS · JavaScript</span>
-        <p>A web app for managing a hotel. Add what it handles, for example bookings, rooms or guests.</p>
-      </a>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <div class="about" style="margin-top:24px">
-        <img class="photo" src="https://avatars.githubusercontent.com/u/161986703?v=4" alt="Samir Dahal" style="object-fit:cover;padding:0">
-        <div>
-          <p>I'm Samir, a developer based in Nepal. Write two or three sentences here on how you got into programming and what you enjoy building.</p>
-          <p>Add the tools you use, such as PHP, Python, JavaScript and MySQL, and the kind of work you want more of.</p>
+      <div>
+        <h1>I build web apps and teach computers to play chess.</h1>
+        <p>I'm Samir, a developer working in PHP, JavaScript and Python. Browse my projects, or try the board on the right: it's a knight's tour, and I've left it unfinished for you.</p>
+        <div class="btns">
+          <a class="btn primary" href="#work">See my work</a>
+          <a class="btn" href="#contact">Get in touch</a>
         </div>
       </div>
-    </section>
-
-    <section id="contact" class="contact" style="border-bottom:0">
-      <h2>Let's work together</h2>
-      <p class="lede">Tell me what you're building and I'll get back to you.</p>
-      <a class="btn" href="mailto:dahalsamir12345@gmail.com">Email me</a>
-      <div class="links">
-        <a href="https://github.com/seallus">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Resume (PDF)</a>
+      <div class="stage">
+        <div class="board" id="board" role="group" aria-label="Chessboard with a knight. Select a highlighted square to move it."></div>
+        <div class="hud">
+          <span aria-live="polite" id="status">Moves <strong id="mv">0</strong> · Squares visited <strong id="vs">1</strong>/64</span>
+          <button type="button" id="reset">Reset</button>
+        </div>
+        <p class="hint" id="hint">Click a yellow dot. The knight moves in an L shape. Can you visit all 64 squares?</p>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
 
-  <footer>
-    <span>© <span id="yr">2026</span> Samir Dahal</span>
-    <button id="theme" type="button">Switch theme</button>
-  </footer>
-</div>
+  <section id="work">
+    <div class="wrap">
+      <h2>Work</h2>
+      <p class="lede">Three projects, each with its code on GitHub. Select one to read more.</p>
+      <div class="chips" role="group" aria-label="Filter projects by language" id="chips"></div>
+      <div id="projects"></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="lede">The languages I've used in the projects above.</p>
+      <div class="skills"><span>Python</span><span>PHP</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <img src="https://avatars.githubusercontent.com/u/161986703?v=4" alt="Portrait of Samir Dahal" width="220" height="220">
+      <div>
+        <h2>About</h2>
+        <p style="margin-top:14px">I'm Samir Dahal, a developer based in Nepal. I like projects where I can build something people use, and ones where I get to dig into how algorithms think.</p>
+        <p>My chess trainer is a good example of the second kind: the bots search ahead with alpha-beta pruning and improve through a genetic algorithm.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let's build something.</h2>
+      <p class="lede">Tell me what you're working on and I'll get back to you.</p>
+      <div class="mail">
+        <code id="email">dahalsamir12345@gmail.com</code>
+        <button class="btn primary" type="button" id="copy">Copy email</button>
+        <a class="btn" href="mailto:dahalsamir12345@gmail.com">Write an email</a>
+      </div>
+      <a href="https://github.com/seallus">github.com/seallus</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="yr">2026</span> Samir Dahal</div></footer>
+
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
+/* ---------- Knight's tour board ---------- */
+var board = document.getElementById('board');
+var START = [7, 1], pos, visited, moves;
+var squares = [];
+var files = 'abcdefgh';
+for (var r = 0; r < 8; r++) for (var c = 0; c < 8; c++) {
+  var b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'sq' + ((r + c) % 2 ? ' d' : '');
+  b.dataset.r = r; b.dataset.c = c;
+  b.addEventListener('click', onSquare);
+  board.appendChild(b); squares.push(b);
+}
+function name(r, c){ return files[c] + (8 - r); }
+function legal(r, c){
+  var d = [[1,2],[2,1],[-1,2],[-2,1],[1,-2],[2,-1],[-1,-2],[-2,-1]], out = {};
+  d.forEach(function(m){ var nr = r + m[0], nc = c + m[1];
+    if (nr >= 0 && nr < 8 && nc >= 0 && nc < 8) out[nr + ',' + nc] = 1; });
+  return out;
+}
+function reset(){ pos = START.slice(); visited = {}; visited[pos.join(',')] = 1; moves = 0; render(); }
+function render(){
+  var ok = legal(pos[0], pos[1]), count = Object.keys(visited).length;
+  squares.forEach(function(s){
+    var r = +s.dataset.r, c = +s.dataset.c, key = r + ',' + c;
+    var isK = r === pos[0] && c === pos[1], isM = !!ok[key];
+    s.classList.toggle('knight', isK);
+    s.classList.toggle('move', isM);
+    s.classList.toggle('visited', !!visited[key] && !isK);
+    s.innerHTML = isK ? '<span class="k" aria-hidden="true">\u265E\uFE0E</span>' : '';
+    s.tabIndex = (isM || isK) ? 0 : -1;
+    s.setAttribute('aria-label', name(r, c) + (isK ? ', knight is here' : isM ? ', legal move' : visited[key] ? ', visited' : ''));
+    s.setAttribute('aria-disabled', isM ? 'false' : 'true');
+  });
+  document.getElementById('mv').textContent = moves;
+  document.getElementById('vs').textContent = count;
+  document.getElementById('hint').innerHTML = count === 64
+    ? '<span class="win">You completed the knight\u2019s tour. Nicely done.</span>'
+    : 'Click a yellow dot. The knight moves in an L shape. Can you visit all 64 squares?';
+}
+function onSquare(e){
+  var s = e.currentTarget, r = +s.dataset.r, c = +s.dataset.c;
+  if (!legal(pos[0], pos[1])[r + ',' + c]) return;
+  pos = [r, c]; visited[r + ',' + c] = 1; moves++; render();
+  squares[r * 8 + c].focus();
+}
+document.getElementById('reset').addEventListener('click', reset);
+reset();
+
+/* ---------- Projects ---------- */
+var projects = [
+  { title: 'Chess trainer', langs: ['Python'], url: 'https://github.com/seallus/chess-trainer-in-python-',
+    text: 'An offline chess trainer where you play against bots. The opponents use a genetic algorithm and alpha-beta search to choose their moves, so you can practise without needing an internet connection.' },
+  { title: 'Project Done: e-commerce site', langs: ['PHP'], url: 'https://github.com/seallus/projectdone',
+    text: 'An online store built in PHP. It covers the basics of a shopping site: browsing products and handling orders on the server side.' },
+  { title: 'Hotel management system', langs: ['PHP', 'JavaScript', 'CSS'], url: 'https://github.com/seallus/hotel-management-system-',
+    text: 'A web application for running a hotel, built with PHP on the back end and CSS and JavaScript on the front end.' }
+];
+var list = document.getElementById('projects'), chips = document.getElementById('chips');
+projects.forEach(function(p, i){
+  var el = document.createElement('div'); el.className = 'proj'; el.dataset.langs = p.langs.join(',');
+  el.innerHTML =
+    '<button type="button" aria-expanded="false" aria-controls="p' + i + '"><div><h3>' + p.title + '</h3><div class="tags">' +
+    p.langs.map(function(l){ return '<span class="tag">' + l + '</span>'; }).join('') +
+    '</div></div><span class="plus" aria-hidden="true">+</span></button>' +
+    '<div class="body" id="p' + i + '"><p>' + p.text + '</p><a href="' + p.url + '">View the code on GitHub</a></div>';
+  el.querySelector('button').addEventListener('click', function(){
+    var open = el.classList.toggle('open'); this.setAttribute('aria-expanded', open);
+  });
+  list.appendChild(el);
+});
+var all = ['All'].concat(Array.from(new Set([].concat.apply([], projects.map(function(p){ return p.langs; })))));
+all.forEach(function(l, i){
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.textContent = l;
+  b.setAttribute('aria-pressed', i === 0);
+  b.addEventListener('click', function(){
+    chips.querySelectorAll('.chip').forEach(function(x){ x.setAttribute('aria-pressed', x === b); });
+    list.querySelectorAll('.proj').forEach(function(p){
+      p.hidden = !(l === 'All' || p.dataset.langs.split(',').indexOf(l) > -1);
+    });
+  });
+  chips.appendChild(b);
+});
+
+/* ---------- Nav highlight, theme, copy ---------- */
+var links = document.querySelectorAll('nav a');
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (e.isIntersecting) links.forEach(function(a){
+    a.setAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id ? 'true' : 'false'); }); });
+}, { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('section').forEach(function(s){ io.observe(s); });
+
 var root = document.documentElement;
 document.getElementById('theme').addEventListener('click', function(){
   var dark = root.getAttribute('data-theme') === 'dark' ||
-    (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
   root.setAttribute('data-theme', dark ? 'light' : 'dark');
 });
+var copy = document.getElementById('copy');
+copy.addEventListener('click', function(){
+  var t = document.getElementById('email').textContent;
+  function done(){ copy.textContent = 'Copied'; setTimeout(function(){ copy.textContent = 'Copy email'; }, 1800); }
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, done); else done();
+});
+document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
